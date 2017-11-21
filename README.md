@@ -20,9 +20,11 @@ For MBFD algorithm part to run instead of randomized algorithm:
 6. Comment line 270
 7. Uncomment line 271 to line 299
 8. Comment line 302
-9. Uncomment line 303 to line 311
+9. Uncomment line 303 to line 311  (*the line numbers are as per how they appear when files are seen in Github UI, where all importa statements are also coounted in line counting)
 
 Now run the CLoudsimExample3.java file again, and you will see results of MBFD algorithm based VM migration.
+
+Reversing all changes from 1 to 9 above will give you the code with Randomized algorithm once again.
 
 Important note: Cloudsim is a simulation software. Hence, running the same algorithm again yields different runtime everytime. Hence, comparison of MBFD and Randomized algorithms (Quickselect and Random Fit) is possible through paper based time complexity anaysis.
 Also, it is possible by running both the programmes and seeing if Randomized algorithm finishes with runtime lower than the MBFD at least once. Also, it is important to note, that Randomized algorithm will produce worst case solution sometimes, becasue of inherent randomness (exampe: random choice of pivot in case of Quickselect resulting in worst choice of pivot for cerrtain run)
