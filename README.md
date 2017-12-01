@@ -1,32 +1,20 @@
 # cloudsim_randomized_vm_migration_algorithm
 
 This is the repository having code for the Modified Best Fit Decreasing algorithm of VM migration.
-Also, this code has the randomized algorithm for VM Migration. Quickselect with randomized pivot is used for selecting VM with highest utilization for each host. Random fit bin packing is used for selecting target host for each migrating VM.
+Also, this code has the randomized algorithm for VM Migration. 
 
 How to run the code:
 
-1. Download all the 3 files.
-2. Replace file ClousimExample3.java from org.cloudbus.cloudsim.examples package in the Cloudsim code
-3. Replace file Datacenter.java and VmAllocationPolicyCustomized.java from org.cloudbus.cloudsim package in CloudSim code
-4. Run the CloudSimExample3.java file.
+1. Download the source code for cloudsim from cloudsim website.
+2. In the cloudsim code base, you will find the 3 files, that are also avaialable in this repo.
+3. Make sure that you are looking at exactly the same files in the cloudsim as the ones that are posted here in the repo.
+4. Pay special attenstion to the import statements at top of the files in this repo. These statements will give you the package and library name under which these files are located in cloudsim.
+5. Now, locate and replace these 3 files with the files in this repo.
+6. Go  to VmAllocationPolicyCustomized.java file. In this file, there is a variable called "choice" in the allocationForMigration function.
+7. If you want to run MBFD algorithm, set choice = 1, else to run randomized algorithm set choice = 2. Dont set for any other value, but these two values, otherwise your code will not run.
+8. After setting the value of variable "choice" in allocationForMigration function of VmAllocationPolicyCustomized.java class, save the file VmAllocationPolicyCustomized.java.
+9. Finally go to CloudSimExample3.java file. Run this file as Java application. You will see the results in the console. 
 
-By default the current code is running the randomized algorithms of Quickselect and Random Fit bin packing.
-For MBFD algorithm part to run instead of randomized algorithm:
-1. Uncomment line 200 to line 222
-2. Uncomment line 244
-3. Comment line 245
-4. Uncomment line 268
-5. Comment line 269
-6. Comment line 270
-7. Uncomment line 271 to line 299
-8. Comment line 302
-9. Uncomment line 303 to line 311  (*the line numbers are as per how they appear when files are seen in Github UI, where all importa statements are also coounted in line counting)
+NOTE : YOU WILL HAVE TO SCROLL UP ON CONSOLE TO SEE LOG STATEMENTS SHOWING OUTPUT FOR MIGRATION OF THE VM.
 
-Now run the CLoudsimExample3.java file again, and you will see results of MBFD algorithm based VM migration.
-
-Reversing all changes from 1 to 9 above will give you the code with Randomized algorithm once again.
-
-Important note: Cloudsim is a simulation software. Hence, running the same algorithm again yields different runtime everytime. Hence, comparison of MBFD and Randomized algorithms (Quickselect and Random Fit) is possible through paper based time complexity anaysis.
-Also, it is possible by running both the programmes and seeing if Randomized algorithm finishes with runtime lower than the MBFD at least once. Also, it is important to note, that Randomized algorithm will produce worst case solution sometimes, becasue of inherent randomness (exampe: random choice of pivot in case of Quickselect resulting in worst choice of pivot for cerrtain run)
-
-Thank You!
+Thanks!
